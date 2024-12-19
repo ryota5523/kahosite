@@ -1,70 +1,96 @@
-@extends('layouts/app')
+@extends('layouts/top')
 @section('content')
-            <!-- プロフィール -->
-                <div class="text-center mx-6 pt-14">
-                    <div class="text-center max-w pt-4">
-                    <img src="https://cdn.hinatazaka46.com/images/14/8c8/eaaefcef06ef82f4dd192b89d5b35/1000_1000_102400.jpg" class="rounded" alt="">
-                    </div>
-                <div class="mt-4">
-                    <div class="#profile">
-                        <div class="text-3xl text-left mb-1">
-                            藤嶌 果歩
-                            <span class="text-sm font-thin">KAHO FUJISIMA</span>
-                        </div>
-                        <div class="text-left text-xs text-gray-400">ふじしま かほ</div>
-                    </div>
-                    <table class="text-left text-blue-300 mt-4 table-auto">
-                        <tbody>
-                            <tr>
-                                <td class="">生年月日</td>
-                                <td class="pl-4 text-gray-700">2006年8月7日</td>
-                            </tr>
-                            <tr>
-                                <td class="">星座</td>
-                                <td class="pl-4 text-gray-700">しし座</td>
-                            </tr>
-                            <tr>
-                                <td class="">身長</td>
-                                <td class="pl-4 text-gray-700">160.3cm</td>
-                            </tr>
-                            <tr>
-                                <td class="">出身地</td>
-                                <td class="pl-4 text-gray-700">北海道</td>
-                            </tr>
-                            <tr>
-                                <td class="">血液型</td>
-                                <td class="pl-4 text-gray-700">不明</td>
-                            </tr>
-                            <tr>
-                                <td class="">ペンライトカラー</td>
-                                <td class="pl-4 text-gray-700">サクラピンク×ブルー</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            <!-- 来歴 -->
-            <div class="text-left">
-                <h1 class="pt-3 text-left font-bold text-3xl text-blue-400 border-b-2 border-blue-400">HISTORY</h1>
-                <h1 class="text-gray-400 text-xl py-3">2022年</h1>
-                <p class="py-1">・9月21日『日向坂46 新メンバー募集オーディション』に合格</p>
-                <p class="py-1">・9月29日『日向坂46 OFFICIAL YouTube CHANNEL』と<a href="https://www.hinatazaka46.com/s/official/diary/detail/45510?ima=0000&cd=4th_generation_m" target="blank" class="text-blue-500">日向坂46公式サイト</a>上でプロフィール公表</p>
-                <iframe class="w-full h-52" src="https://www.youtube.com/embed/Jwna_0RAXvY?si=YoOLk3aM3BaUapT-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                <p class="py-1">・10月26日発売の8thシングル『月と星が踊るMidnight』収録曲『ブルーベリー&ラズベリー』でシングル初参加</p>
-                <h1 class="text-gray-400 text-xl py-3">2023年</h1>
-                <p class="py-1">・7月26日発売の10thシングル『Am I ready?』収録曲『見たことない魔物』で初センターを務める</p>
-                <iframe class="w-full h-52 lg:h-96 lg:w-1/2" src="https://www.youtube.com/embed/PBQwERX7FvQ?si=XAQl4EWD2qC8L5p4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                <h1 class="text-gray-400 text-xl py-3">2024年</h1>
-                <p class="py-1">・5月8日発売の11thシングル『君はハニーデュー』で初の選抜入りをする</p>
-                <iframe class="w-full h-52" src="https://www.youtube.com/embed/wRzPuptA6yw?si=xX6oc1uH5HbVsMW-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-            <!-- 日向坂ちゃんねるおすすめ動画 -->
-            <div class="text-left pt-3 pb-10">
-                <h1 class="pt-3 text-left font-bold text-3xl text-blue-400 border-b-2 border-blue-400">RECOMMEND</h1>
-                <p class="pt-2">【奈良観光】東村芽依とガチデートしてみたら男前すぎて惚れ直した【めいかほ】</p>
-                <iframe class="w-full h-52" src="https://www.youtube.com/embed/skm91EgciZw?si=YdB0tWZx9NoEyM0y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                <p class="pt-2">【見たことない魔物】四期生が自由にコール動画を撮ってみた。</p>
-                <iframe class="w-full h-52" src="https://www.youtube.com/embed/94IJ-zkZeMM?si=bOl8fLrjZCjzBDLc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-                </div>
-            </div>
+<div class="">
+    <nav class="lg:w-1/2 justify-between flex mx-auto">
+        <!-- メニューボタン -->
+        <button id="button" type="button" class="fixed right-6 z-10 top-3 md:hidden">
+            <i id="bars" class="fa-solid fa-bars fa-2x text-white"></i>
+            <i id="xmark" class="fa-solid fa-xmark fa-2x hidden text-white"></i>
+        </button>
+        
+        <!-- メニューリスト -->
+        <ul id="menu" class="fixed top-0 left-0 z-0 w-full h-full translate-x-full bg-blue-300/90 text-center text-xl font-bold text-white transition-all ease-linear">
+            <li class="p-3"><a href="{{ url('/profile') }}">PROFILE</a></li>
+            <li class="p-3"><a href="{{ url('/blog') }}">BLOG</a></li>
+            <li class="p-3"><a href="{{ url('/about') }}">ABOUT</a></li>
+            <li class="p-3"><a href="{{ url('https://store.plusmember.jp/hinatazaka46/products/list.php?name=%E8%97%A4%E5%B6%8C')}}" target="_blank">SHOP</a></li>
+            <li class="p-3"><a href="{{ url('/schedule') }}">SCHEDULE</a></li>
+        </ul>
+    </nav>
+    
+</div>
+<script src="{{ asset('/js/app.js') }}"></script>
+<div class="w-screen">
+    <img src="/src/top.webp" alt="" class="lg:w-1/2 lg:mx-auto">
+</div>
+<div class="p-6 w-screen">
+    <div class="mx-auto lg:w-1/2 list-none">
+        <p class="text-center text-blue-400 font-bold text-sm mb-2">オンライン</p>
+        <ul class="leading-relaxed text-blue-400 flex flex-wrap justify-between text-center text-xs font-thin">
+            <li class="mb-1">
+                <a href="{{ asset('/profile')}}" class="hover:opacity-80">
+                <img src="/src/1.webp" alt="" class="w-24 h-24 rounded-full mb-1">
+                    PROFILE
+                </a>
+            </li>
+            <li class="">
+                <a href="{{ asset('/blog')}}" class="hover:opacity-80">
+                <img src="/src/2.webp" alt="" class="w-24 h-24 rounded-full mb-1">
+                    BLOG
+                </a>
+            </li>
+            <li class="">
+                <a href="{{ asset('https://store.plusmember.jp/hinatazaka46/products/list.php?name=%E8%97%A4%E5%B6%8C')}}" target="_blank" class="hover:opacity-80">
+                <img src="/src/3.webp" alt="" class="w-24 h-24 rounded-full mb-1">
+                    SHOP
+                </a>    
+            </li>
+        </ul>
+    </div>
+    <div class="mx-auto lg:w-1/2 list-none mt-6">
+        <ul class="leading-relaxed text-blue-400 flex flex-wrap justify-between text-center text-xs font-thin">
+            <li class="">
+                <a href="{{ asset('/schedule')}}" class="hover:opacity-80">
+                <img src="/src/4.webp" alt="" class="w-24 h-24 rounded-full mb-1">
+                    SCHEDULE
+                </a>
+            </li>
+            <li class="">
+                <a href="{{ asset('/about')}}" class="hover:opacity-80">
+                <img src="/src/5.webp" alt="" class="w-24 h-24 rounded-full mb-1">
+                    ABOUT
+                </a>
+            </li>
+            <li class="opacity-0">
+                <img src="" alt="" class="w-24 h-24 sm:w-24 sm:h-24 rounded-full mb-1">
+                PLACEHOLDER
+            </li>
+        </ul>
+    </div>
+
+    <div class="mx-auto lg:w-1/2 list-none border-t my-2 py-2">
+        <p class="text-center text-blue-400 font-bold text-sm">他ファンサイト</p>
+        <ul class="leading-relaxed text-blue-400 flex flex-wrap justify-between text-center text-xs font-thin">
+            <li class="">
+                <a href="{{ asset('https://www.shihonet.site/')}}" class="hover:opacity-80" target="blank">
+                <img src="/src/shihonet.png" alt="" class="w-24 h-24 rounded-full mb-1">
+                    #shihonet
+                </a>
+            </li>
+            <li class="">
+                <a href="{{ asset('https://nibupage.wixsite.com/mysite')}}" class="hover:opacity-80" target="blank">
+                <img src="/src/nibupage.jpg" alt="" class="w-24 h-24 rounded-full mb-1">
+                    #nibupage
+                </a>
+            </li>
+            <li class="">
+                <a href="{{ asset('https://kyonkosite95.wixsite.com/kyonkosite')}}" class="hover:opacity-80" target="blank">
+                <img src="/src/kyonkosite.jpg" alt="" class="w-24 h-24 rounded-full mb-1">
+                    #kyonkosite
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+</div>
 @endsection

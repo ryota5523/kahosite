@@ -1,43 +1,30 @@
 @extends('layouts/app')
+
 @section('content')
-<div class="sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center dark:bg-dots-lighter pt-14">    
-    <ul class="flex flex-wrap p-6 justify-between">
-        <li class="w-[calc(50%_-_10px)] mb-6">
-            <a href="" class="sticky">
-                <img src="https://cdn.hinatazaka46.com/files/14/diary/official/member/moblog/202403/mobfLAnGo.jpg" alt="" class="rounded-3xl">
-                <div class="absolute bottom-1 left-3">
-                    <p class="text-xs text-blue-400">日付</p>
-                    <p class="text-sm text-white">タイトル</p>
+<div class="pt-14 w-screen">
+    <img src="/src/blog.png" alt="Blog Image" class="lg:w-1/2 lg:mx-auto">
+</div>
+<div class="px-6 w-screen">
+    <div class="mx-auto lg:w-1/2">
+        <div class="pt-3">
+            <ul class="pb-6">
+                @foreach ($blogs as $blog)
+                    <li class="p-3 mb-4 bg-white rounded-xl">
+                        <a href="{{ $blog->url }}" class="flex" target="blank">
+                            <img src="{{ $blog->image }}" alt="Blog Image" class="rounded-xl w-16 h-16 object-cover" loading="lazy">
+                            <div class="mt-2 ml-3">
+                                <p class="text-base text-blue-400">{{ $blog->date }}</p>
+                                <p class="text-lg text-gray-700">{{ $blog->title }}</p>
+                            </div>
+                        </a>
+                    </li>
+                @endforeach
+                <div class="flex justify-center mt-6">
+                    {{ $blogs->links() }}
                 </div>
-            </a>
-        </li>
-        <li class="w-[calc(50%_-_10px)] mb-6">
-            <a href="" class="sticky">
-                <img src="https://cdn.hinatazaka46.com/files/14/diary/official/member/moblog/202403/mobfLAnGo.jpg" alt="" class="rounded-3xl">
-                <div class="absolute bottom-1 left-3">
-                    <p class="text-xs text-blue-400">日付</p>
-                    <p class="text-sm text-white">タイトル</p>
-                </div>
-            </a>
-        </li>
-        <li class="w-[calc(50%_-_10px)]">
-            <a href="" class="sticky">
-                <img src="https://cdn.hinatazaka46.com/files/14/diary/official/member/moblog/202403/mobfLAnGo.jpg" alt="" class="rounded-3xl">
-                <div class="absolute bottom-1 left-3">
-                    <p class="text-xs text-blue-400">日付</p>
-                    <p class="text-sm text-white">タイトル</p>
-                </div>
-            </a>
-        </li>
-        <li class="w-[calc(50%_-_10px)]">
-            <a href="" class="sticky">
-                <img src="https://cdn.hinatazaka46.com/files/14/diary/official/member/moblog/202403/mobfLAnGo.jpg" alt="" class="rounded-3xl">
-                <div class="absolute bottom-1 left-3">
-                    <p class="text-xs text-blue-400">日付</p>
-                    <p class="text-sm text-white">タイトル</p>
-                </div>
-            </a>
-        </li>
-    </ul>
+            </ul>
+            <!-- ページネーションのリンク -->
+        </div>
+    </div>
 </div>
 @endsection

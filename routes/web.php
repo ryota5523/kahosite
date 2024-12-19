@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ScheduleController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -18,19 +19,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home/index');
 });
-Route::get('/blog', function () {
-    return view('home/blog');
+Route::get('/profile', function () {
+    return view('home/profile');
 });
-// Route::get('/blog', [BlogController::class, '']);
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+Route::get('/about', function () {
+    return view('home/about');
 });
+Route::get('/schedule', [ScheduleController::class, 'scrapeSchedule']);
+
+Route::get('/blog', [BlogController::class, 'showBlog'])->name('showBlog');
+Route::get('/scrape', [BlogController::class, 'scrapeBlog']);
+    
 
 require __DIR__.'/auth.php';

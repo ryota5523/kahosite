@@ -3,6 +3,8 @@ import laravel from 'laravel-vite-plugin';
 
 export default defineConfig({
     server: {
+        port:8000,
+        strictPort :true,
         hmr: {
             host: 'localhost',
         },
@@ -13,4 +15,5 @@ export default defineConfig({
             refresh: true,
         }),
     ],
+    
 });
